@@ -5,6 +5,8 @@ const request = require('request')
 const geocode = require("./utils/geoCode.js")
 const forecast = require("./utils/forecast.js")
 
+const port = process.env.PORT || 3000
+
 const app = express()
 
 // we need to provide absolute address of the file, thus __dirname and path come handy
@@ -71,6 +73,6 @@ app.get("*", (req,res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("Server is up on port 3000.");
+app.listen(port, () => {
+    console.log("Server is up on port " + port + ".");
 })
